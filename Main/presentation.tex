@@ -330,13 +330,38 @@
 \end{frame}
 
 
-\begin{frame}{Use Earth Mover's Distance to Evaluate Performance}
-Fill out this slide
+\begin{frame}{Use Earth Mover's Distance to Evaluate Distribution Similarity}
+    \begin{columns}
+    \column{0.7\textwidth}
+Informally, interpret two distribution samples as two different ways of piling up the same amount of dirt over a region, then the EMD is the minimum cost of turning one pile into the other; where the cost is assumed to be amount of dirt moved times the distance by which it is moved.
+
+Computationally complex, for simple 1D distributions can be calculated by the Wasserstein-1 metric.
+
+
+ 
+ %https://stats.stackexchange.com/questions/295617/what-is-the-advantages-of-wasserstein-metric-compared-to-kullback-leibler-diverg
+ 
+ 
+ \column{0.3\textwidth}
+ 
+ \begin{figure}[!h]
+    \centering
+    %\includegraphics[scale=0.3]{FinalPictures/EMD/EmdRatio.png}
+    \includegraphics[width=.99\textwidth,trim={2.5cm 1.75cm 2cm 2.1cm},clip]{images/EMDSample.png}
+    \label{fig:EMD}
+\end{figure}
+Identical distributions have EMD=0, 2 finite samples drawn from the same distribution have small nonzero EMD.
+
+    \end{columns}
+\small
+%\vspace{1cm}
+wikipedia.org/wiki/Earth\_mover\%27s\_distance
+
 \end{frame}
 
 
 \begin{frame}{NF Model EMD $\sim$ 5x Worse than Ideal Case}
-Reproduced feature distributions are about 2 - 6 times worse than a perfect model
+Red reference line is EMD value between 2 samples from physics test dataset; blue points are EMD values for each feature
 \begin{figure}[!h]
     \centering
     %\includegraphics[scale=0.3]{FinalPictures/EMD/EmdRatio.png}
